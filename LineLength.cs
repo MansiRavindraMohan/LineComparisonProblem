@@ -19,6 +19,8 @@ namespace LineComparison
             int val6;
             int val7;
             int val8;
+            bool l1=true;
+            bool l2=true;
 
             Console.WriteLine("Enter the first line");
             Console.WriteLine("Enter the start point");
@@ -55,18 +57,46 @@ namespace LineComparison
 
             double length1 = Math.Sqrt((val7 - val5) ^ 2 + (val8 - val6) ^ 2);
             Console.WriteLine("Length of second line is:" + length1);
-
-            if (length.Equals(length1))
+            
+            if (length>length1)
             {
-                Console.WriteLine("Line is equal");
+                l1 = true;
+               
             }
             else
             {
-                Console.WriteLine("Line is not equal");
+               
+                l1 = false;
             }
-                    
-        }
+            if (length < length1)
+            {
+                l2 = true;
 
-        
+            }
+            else
+            {
+
+                l2 = false;
+            }
+            int i = l1.CompareTo(l2);
+
+            if (i > 0)
+
+                Console.Write("First line is greater than second");
+
+
+            else if (i < 0)
+
+                Console.Write("First line is less than second");
+
+
+            else
+
+                Console.Write("First line is equal to second line");
+
+        }
     }
+
+
 }
+
